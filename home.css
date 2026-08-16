@@ -1,0 +1,445 @@
+* {
+    font-family: "Inter", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #FFF;
+    background-color: #080E1C;
+    min-height: 100vh;
+}
+
+/* --- Header / Navbar Fixo com Transição --- */
+.navbar {
+    background-color: #FFFFFF;
+    width: 100%;
+    border-bottom: 1px solid #E2E8F0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+
+.navbar.nav-hidden {
+    transform: translateY(-100%);
+}
+
+.header-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header-left {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #006699;
+    text-decoration: none;
+    letter-spacing: -0.03em;
+}
+
+.logo span {
+    color: #00DBE7;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #64748B;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding-bottom: 0.25rem;
+    position: relative;
+    transition: color 0.2s ease;
+}
+
+.nav-links a:hover {
+    color: #0F172A;
+}
+
+.nav-links a.active {
+    color: #006699;
+    font-weight: 600;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -1.25rem;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #006699;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 50%;
+    background-color: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+}
+
+.icon-btn:hover {
+    background-color: #F1F5F9;
+}
+
+/* Ícone Notificação (Sino) */
+.icon-bell {
+    background-color: #64748B;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9'%3E%3C/path%3E%3Cpath d='M13.73 21a2 2 0 0 1-3.46 0'%3E%3C/path%3E%3C/svg%3E") no-repeat center / 20px 20px;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9'%3E%3C/path%3E%3Cpath d='M13.73 21a2 2 0 0 1-3.46 0'%3E%3C/path%3E%3C/svg%3E") no-repeat center / 20px 20px;
+}
+
+.icon-bell:hover {
+    background-color: #0F172A;
+}
+
+/* Ícone Configurações (Engrenagem) */
+.icon-gear {
+    background-color: #64748B;
+    -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'%3E%3C/path%3E%3C/svg%3E") no-repeat center / 20px 20px;
+    mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='12' cy='12' r='3'%3E%3C/circle%3E%3Cpath d='M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z'%3E%3C/path%3E%3C/svg%3E") no-repeat center / 20px 20px;
+}
+
+.icon-gear:hover {
+    background-color: #0F172A;
+}
+
+/* Avatar do Usuário */
+.user-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-image: url('./images/avatar.png');
+    background-size: cover;
+    background-position: center;
+    background-color: #CBD5E1;
+    cursor: pointer;
+}
+
+/* --- Container Principal --- */
+.main-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 7rem 2rem 3rem 2rem;
+}
+
+/* --- Hero Section --- */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    margin-bottom: 5rem;
+}
+
+.conteudo-texto {
+    flex: 1;
+    max-width: 540px;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+}
+
+.part1 {
+    color: #00DBE7;
+    margin-bottom: 2rem;
+}
+
+p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #A3B3C8;
+    margin-bottom: 2rem;
+}
+
+.botoes {
+    display: flex;
+    gap: 1.25rem;
+}
+
+button {
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 1.75rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.botoes button:first-child {
+    background-color: #006699;
+    color: #FFFFFF;
+}
+
+.botoes button:first-child:hover {
+    background-color: #0077b3;
+}
+
+.botoes button:last-child {
+    background-color: transparent;
+    color: #2A5B84;
+    border: 1px solid #1E3A5A;
+}
+
+.botoes button:last-child:hover {
+    border-color: #00DBE7;
+    color: #00DBE7;
+}
+
+.produto {
+    flex: 1.2;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.produto img {
+    width: 100%;
+    max-width: 42rem;
+    height: auto;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+/* --- Depoimento --- */
+.depoimento-section {
+    width: 100%;
+    margin-bottom: 5rem;
+}
+
+.divisor {
+    border: none;
+    border-top: 1px solid #1E293B;
+    margin: 3.5rem 0;
+    width: 100%;
+}
+
+blockquote {
+    text-align: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.citacao {
+    font-size: 1.5rem;
+    font-style: italic;
+    font-weight: 500;
+    color: #E2E8F0;
+    line-height: 1.45;
+    margin-bottom: 1.25rem;
+}
+
+cite {
+    display: block;
+    font-size: 0.875rem;
+    font-style: normal;
+    font-weight: 500;
+    color: #64748B;
+}
+
+/* --- Cards de Recursos --- */
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-bottom: 6rem;
+}
+
+.feature-card {
+    background-color: #0D1527;
+    border: 1px solid #1E293B;
+    border-radius: 16px;
+    padding: 2.5rem 2rem;
+    transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), 
+                border-color 0.3s ease, 
+                box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    border-color: #00DBE7;
+    box-shadow: 0 12px 30px -10px rgba(0, 219, 231, 0.15);
+}
+
+.icon-box {
+    width: 44px;
+    height: 44px;
+    background-color: #0A2338;
+    color: #00DBE7;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.feature-card:hover .icon-box {
+    transform: scale(1.1);
+    background-color: #00DBE7;
+    color: #080E1C;
+}
+
+.feature-card h3 {
+    font-size: 1.35rem;
+    font-weight: 600;
+    color: #00DBE7;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+}
+
+.feature-card p {
+    font-size: 0.95rem;
+    color: #8899A6;
+    margin-bottom: 0;
+    line-height: 1.5;
+}
+
+/* --- Seção Para Quem É --- */
+.target-section {
+    text-align: center;
+}
+
+.target-section h2 {
+    font-size: 2.5rem;
+    color: #00DBE7;
+    margin-bottom: 0.5rem;
+}
+
+.target-section .subtitle {
+    font-size: 1.1rem;
+    color: #A3B3C8;
+    margin-bottom: 3rem;
+}
+
+.tab-container {
+    background-color: #0B1220;
+    border: 1px solid #1E293B;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+.tabs-header {
+    display: flex;
+    border-bottom: 1px solid #1E293B;
+    background-color: #080E1C;
+}
+
+.tab-btn {
+    flex: 1;
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid transparent;
+    border-radius: 0;
+    color: #8899A6;
+    padding: 1.25rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.tab-btn.active {
+    color: #00DBE7;
+    border-bottom-color: #00DBE7;
+}
+
+.tab-content {
+    display: flex;
+    align-items: center;
+    padding: 3.5rem;
+    gap: 3rem;
+    text-align: left;
+}
+
+.tab-text {
+    flex: 1;
+}
+
+.tab-text h3 {
+    font-size: 2.25rem;
+    color: #00DBE7;
+    margin-bottom: 1.25rem;
+}
+
+.tab-text p {
+    font-size: 1rem;
+    color: #A3B3C8;
+    margin-bottom: 2rem;
+}
+
+.feature-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.feature-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: #E2E8F0;
+    font-size: 0.95rem;
+}
+
+.check-icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #00DBE7;
+    color: #00DBE7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
+
+.tab-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.tab-image img {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    border-radius: 12px;
+}

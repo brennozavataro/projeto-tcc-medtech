@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="home.css">
+    <script src="home.js" defer></script>
+    <title>Home MedTECH</title>
+</head>
+<body>
+
+    <!-- Header / Barra de Navegação -->
+    <header class="navbar" id="navbar">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="#" class="logo">Med<span>Tech</span></a>
+                <nav class="nav-links">
+                    <a href="#" class="active">Painel</a>
+                    <a href="#">Cuidado ao Paciente</a>
+                    <a href="#">Dispositivos</a>
+                    <a href="#">Insights</a>
+                </nav>
+            </div>
+            
+            <div class="header-right">
+                <button class="icon-btn icon-bell" aria-label="Notificações"></button>
+                <button class="icon-btn icon-gear" aria-label="Configurações"></button>
+                <div class="user-avatar" role="img" aria-label="Foto de perfil"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <!-- Hero Section -->
+        <section class="hero-container">
+            <div class="conteudo-texto">
+                <h1>Elimine o erro <br> humano.</h1>
+                <h1 class="part1">Proteja quem <br> você ama.</h1>
+
+                <p>Precisão clínica aliada ao cuidado domiciliar. Gerenciamento automatizado de medicamentos projetado para evitar erros, economizar tempo e proporcionar tranquilidade total para as famílias.</p>
+
+                <div class="botoes">
+                    <button>Explorar Dispositivos</button>
+                    <button>Ver Teste Clínico</button>
+                </div>
+            </div>
+
+            <div class="produto">
+                <img src="./images/produtoTCC.png" alt="Imagem do produto final">
+            </div>
+        </section>
+
+        <!-- Depoimento / Citação -->
+        <section class="depoimento-section">
+            <hr class="divisor">
+            <blockquote>
+                <p class="citacao">
+                    "Nossa missão é preencher a lacuna entre a logística hospitalar complexa e a simplicidade necessária para o cuidado domiciliar, garantindo que cada dose seja entregue com precisão cirúrgica."
+                </p>
+                <cite>Dr. Elias Thorne — Diretor Médico, MedTech Solutions</cite>
+            </blockquote>
+            <hr class="divisor">
+        </section>
+
+        <!-- Cards de Recursos -->
+        <section class="features-grid">
+            <div class="feature-card">
+                <div class="icon-box">🌱</div>
+                <h3>Zero desperdício</h3>
+                <p>O algoritmo de dispensação otimizado garante que nenhum comprimido seja perdido ou danificado. O sensor de inventário inteligente avisa muito antes de precisar de recarga.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box">🔬</div>
+                <h3>100% precisão automatizada</h3>
+                <p>Atuadores de grau militar e sensores de verificação óptica confirmam cada dose em relação à prescrição digital do médico.</p>
+            </div>
+
+            <div class="feature-card">
+                <div class="icon-box">📊</div>
+                <h3>Rastreamento em tempo real</h3>
+                <p>Alertas instantâneos via sincronização criptografada na nuvem. Monitore a adesão de qualquer lugar do mundo com o app MedTech Care.</p>
+            </div>
+        </section>
+
+        <!-- Para quem é o MedTech? -->
+        <section class="target-section">
+            <h2>Para quem é o MedTech?</h2>
+            <p class="subtitle">Cuidado personalizado para cada jornada médica.</p>
+
+            <div class="tab-container">
+                <div class="tabs-header">
+                    <p class="tab-btn active">Cuidadores Familiares</p>
+                </div>
+
+                <div class="tab-content">
+                    <div class="tab-text">
+                        <h3>Visibilidade total para as famílias.</h3>
+                        <p>Cuidando de um pai ou mãe à distância? O MedTech envia notificações instantâneas quando as doses são tomadas ou esquecidas, permitindo que você aja imediatamente sem precisar monitorar o tempo todo.</p>
+                        
+                        <ul class="feature-list">
+                            <li><span class="check-icon">✓</span> Painel familiar compartilhado</li>
+                            <li><span class="check-icon">✓</span> Protocolos de emergência para doses perdidas</li>
+                            <li><span class="check-icon">✓</span> Pronto para videoconsultas</li>
+                        </ul>
+                    </div>
+                    <div class="tab-image">
+                        <img src="./images/family.jpg" alt="Família reunida utilizando a solução MedTech">
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+</body>
+</html>
