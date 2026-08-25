@@ -3,29 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel — MedTech</title>
+
+    <!-- Define o tema salvo antes de carregar o CSS, para não piscar -->
+    <script src="home.js"></script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="home.css">
-    <script src="home.js" defer></script>
-    <title>Home MedTECH</title>
 </head>
 <body>
 
-    <!-- Header / Barra de Navegação -->
+    <!-- Header / Barra de Navegação (igual em todas as páginas) -->
     <header class="navbar" id="navbar">
         <div class="header-container">
             <div class="header-left">
-                <a href="#" class="logo">Med<span>Tech</span></a>
+                <a href="home.html" class="logo">Med<span>Tech</span></a>
                 <nav class="nav-links">
-                    <a href="#" class="active">Painel</a>
-                    <a href="#">Cuidado ao Paciente</a>
-                    <a href="#">Dispositivos</a>
+                    <a href="home.html" class="active">Painel</a>
+                    <a href="quemsomos.html">Cuidado ao Paciente</a>
+                    <a href="dispositivos.html">Dispositivos</a>
                     <a href="#">Insights</a>
                 </nav>
             </div>
-            
+
             <div class="header-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+                    <span class="theme-toggle-icon icon-sun"></span>
+                    <span class="theme-toggle-icon icon-moon"></span>
+                </button>
                 <button class="icon-btn icon-bell" aria-label="Notificações"></button>
                 <button class="icon-btn icon-gear" aria-label="Configurações"></button>
                 <div class="user-avatar" role="img" aria-label="Foto de perfil"></div>
@@ -43,13 +50,13 @@
                 <p>Precisão clínica aliada ao cuidado domiciliar. Gerenciamento automatizado de medicamentos projetado para evitar erros, economizar tempo e proporcionar tranquilidade total para as famílias.</p>
 
                 <div class="botoes">
-                    <button>Explorar Dispositivos</button>
-                    <button>Ver Teste Clínico</button>
+                    <button class="btn-primary">Explorar Dispositivos</button>
+                    <button class="btn-secondary">Ver Teste Clínico</button>
                 </div>
             </div>
 
             <div class="produto">
-                <img src="./images/produtoTCC.png" alt="Imagem do produto final">
+                <img src="./images/produtoTCC.png" alt="Esquema visual do produto MedTech">
             </div>
         </section>
 
@@ -93,14 +100,14 @@
 
             <div class="tab-container">
                 <div class="tabs-header">
-                    <p class="tab-btn active">Cuidadores Familiares</p>
+                    <button class="tab-btn active">Cuidadores Familiares</button>
                 </div>
 
                 <div class="tab-content">
                     <div class="tab-text">
                         <h3>Visibilidade total para as famílias.</h3>
                         <p>Cuidando de um pai ou mãe à distância? O MedTech envia notificações instantâneas quando as doses são tomadas ou esquecidas, permitindo que você aja imediatamente sem precisar monitorar o tempo todo.</p>
-                        
+
                         <ul class="feature-list">
                             <li><span class="check-icon">✓</span> Painel familiar compartilhado</li>
                             <li><span class="check-icon">✓</span> Protocolos de emergência para doses perdidas</li>
@@ -108,12 +115,24 @@
                         </ul>
                     </div>
                     <div class="tab-image">
-                        <img src="./images/family.jpg" alt="Família reunida utilizando a solução MedTech">
+                        <img src="./images/family.jpg" alt="Família utilizando a solução MedTech">
                     </div>
                 </div>
             </div>
         </section>
     </main>
+
+    <!-- Footer (igual em todas as páginas) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>© 2026 MedTech Precision Systems. Todos os direitos reservados.</p>
+            <nav class="footer-links">
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Conformidade de Hardware</a>
+            </nav>
+        </div>
+    </footer>
 
 </body>
 </html>

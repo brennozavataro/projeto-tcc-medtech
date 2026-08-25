@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dispositivos — MedTech</title>
+
+    <!-- Define o tema salvo antes de carregar o CSS, para não piscar -->
+    <script src="dispositivos.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="dispositivos.css">
+</head>
+<body>
+
+    <!-- Header / Barra de Navegação (igual em todas as páginas) -->
+    <header class="navbar" id="navbar">
+        <div class="header-container">
+            <div class="header-left">
+                <a href="home.html" class="logo">Med<span>Tech</span></a>
+                <nav class="nav-links">
+                    <a href="home.html">Painel</a>
+                    <a href="quemsomos.html">Cuidado ao Paciente</a>
+                    <a href="dispositivos.html" class="active">Dispositivos</a>
+                    <a href="#">Insights</a>
+                </nav>
+            </div>
+
+            <div class="header-right">
+                <button class="theme-toggle" id="themeToggle" aria-label="Alternar tema claro/escuro" title="Alternar tema">
+                    <span class="theme-toggle-icon icon-sun"></span>
+                    <span class="theme-toggle-icon icon-moon"></span>
+                </button>
+                <button class="icon-btn icon-bell" aria-label="Notificações"></button>
+                <button class="icon-btn icon-gear" aria-label="Configurações"></button>
+                <div class="user-avatar" role="img" aria-label="Foto de perfil"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-container">
+        <div class="device-layout">
+
+            <!-- Sidebar esquerda -->
+            <aside class="device-sidebar">
+                <div class="sidebar-brand">
+                    <span class="sidebar-brand-icon">⚡</span>
+                    <div class="sidebar-brand-text">
+                        <strong>MedTech System</strong>
+                        <span>Precision Hardware</span>
+                    </div>
+                </div>
+
+                <nav class="sidebar-nav">
+                    <a href="#" class="sidebar-link">📁 Catálogo</a>
+                    <a href="#" class="sidebar-link active">⚙️ Configurações</a>
+                    <a href="#" class="sidebar-link">📄 Histórico de Orçamentos</a>
+                    <a href="#" class="sidebar-link">🏬 Inventário</a>
+                </nav>
+
+                <a href="#" class="sidebar-support">❓ Suporte</a>
+            </aside>
+
+            <!-- Conteúdo central -->
+            <section class="specs-main">
+                <div class="page-heading">
+                    <h1 style="font-size:2rem;">Especificações do Protótipo</h1>
+                    <p class="specs-subtitle">Detalhamento técnico e análise orçamentária dos componentes de alta precisão para o sistema MedTech.</p>
+                </div>
+
+                <div class="specs-grid">
+                    <div class="spec-card">
+                        <div class="spec-card-header">
+                            <span class="spec-icon">🖥️</span>
+                            <span class="badge badge-premium">Premium</span>
+                        </div>
+                        <h3>Microcontrolador</h3>
+                        <p>Processamento central com arquitetura RISC-V para controle em tempo real de atuadores cirúrgicos.</p>
+                        <div class="spec-tags">
+                            <span class="spec-tag">240 MHz</span>
+                            <span class="spec-tag">3.3 V</span>
+                        </div>
+                    </div>
+
+                    <div class="spec-card">
+                        <div class="spec-card-header">
+                            <span class="spec-icon">🧱</span>
+                        </div>
+                        <h3>Chassi MedTech</h3>
+                        <p>Impressão 3D em Polímero SLS compatível com controle de alta densidade e esterilização.</p>
+                        <div class="spec-tags">
+                            <span class="spec-tag">Material certificado</span>
+                        </div>
+                    </div>
+
+                    <div class="spec-card">
+                        <div class="spec-card-header">
+                            <span class="spec-icon">🖵</span>
+                        </div>
+                        <h3>Módulo OLED</h3>
+                        <p>Interface de alto contraste para visualização de parâmetros vitais e status de dispensação.</p>
+                        <div class="spec-tags">
+                            <span class="spec-tag">2.4" monocromático</span>
+                        </div>
+                    </div>
+
+                    <div class="spec-card">
+                        <div class="spec-card-header">
+                            <span class="spec-icon">📡</span>
+                        </div>
+                        <h3>Sensores de Proximidade</h3>
+                        <p>Matriz infravermelha para detecção de obstáculos com latência de 2 ms.</p>
+                        <div class="spec-card-media">
+                            <img class="spec-card-media-thumb" src="./images/Visual schema.jpg" alt="Pré-visualização dos sensores de proximidade">
+                            <span class="spec-tag">Laser ToF Array</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="cost-analysis">
+                    <div class="cost-header">
+                        <h2>Análise de Custos</h2>
+                        <span class="badge badge-total">Custo total do projeto: R$ 2.200,00</span>
+                    </div>
+
+                    <table class="cost-table">
+                        <thead>
+                            <tr>
+                                <th>Item</th>
+                                <th>Especificação</th>
+                                <th>Qtd</th>
+                                <th>Preço un.</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Microcontrolador High-End</td>
+                                <td>RISC-V 240MHz</td>
+                                <td>01</td>
+                                <td class="price">R$ 450,00</td>
+                            </tr>
+                            <tr>
+                                <td>Motor de Passo NEMA 17</td>
+                                <td>High Torque / Precision</td>
+                                <td>04</td>
+                                <td class="price">R$ 85,00</td>
+                            </tr>
+                            <tr>
+                                <td>Chassi MedTech (3D)</td>
+                                <td>Biopolímero SLS</td>
+                                <td>01</td>
+                                <td class="price">R$ 650,00</td>
+                            </tr>
+                            <tr>
+                                <td>Módulo Display OLED</td>
+                                <td>2.4" Monochrome</td>
+                                <td>01</td>
+                                <td class="price">R$ 180,00</td>
+                            </tr>
+                            <tr>
+                                <td>Sensores de Proximidade</td>
+                                <td>Laser ToF Array</td>
+                                <td>04</td>
+                                <td class="price">R$ 70,00</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </section>
+
+            <!-- Painel resumo (direita) -->
+            <aside class="summary-panel">
+                <h3>Resumo Final</h3>
+
+                <div class="summary-row">
+                    <span>Subtotal Hardware</span>
+                    <span>R$ 1.900,00</span>
+                </div>
+                <div class="summary-row">
+                    <span>Taxas de Montagem</span>
+                    <span>R$ 300,00</span>
+                </div>
+
+                <hr>
+
+                <div class="summary-row total">
+                    <span>Total Geral</span>
+                    <span>R$ 2.200,00</span>
+                </div>
+
+                <button class="btn-primary btn-block">📄 Gerar Relatório Técnico</button>
+
+                <ul class="summary-notes">
+                    <li>Valores sujeitos à cotação de componentes importados.</li>
+                    <li>Garantia de precisão MedTech incluída.</li>
+                </ul>
+
+                <div class="render-box">
+                    <span class="render-label">Renderização do chassi</span>
+                    <img src="./images/MedTech Chassis.jpg" alt="Renderização 3D do chassi MedTech">
+                    <span class="render-caption">Polímero SLS com acabamento em micro-textura.</span>
+                </div>
+            </aside>
+
+        </div>
+    </main>
+
+    <!-- Footer (igual em todas as páginas) -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>© 2026 MedTech Precision Systems. Todos os direitos reservados.</p>
+            <nav class="footer-links">
+                <a href="#">Termos de Serviço</a>
+                <a href="#">Política de Privacidade</a>
+                <a href="#">Conformidade de Hardware</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

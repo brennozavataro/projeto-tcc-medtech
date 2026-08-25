@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MedTech — home.js
+   MedTech — dispositivos.js
    Define o tema salvo ANTES da renderização (evita flash), depois liga
    o botão de alternância de tema e o comportamento da navbar ao rolar.
    Este script deve ser carregado no <head>, ANTES do <link> do CSS,

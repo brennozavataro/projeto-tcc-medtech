@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MedTech — home.js
+   MedTech — quemsomos.js
    Define o tema salvo ANTES da renderização (evita flash), depois liga
    o botão de alternância de tema e o comportamento da navbar ao rolar.
    Este script deve ser carregado no <head>, ANTES do <link> do CSS,
@@ -47,6 +47,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 navbar.classList.remove("nav-hidden");
             }
             lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        });
+    }
+});
+
+document.addEventListener("DOMContentLoaded", function () {
+    "use strict";
+    var form = document.getElementById("contactForm");
+    if (form) {
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            alert("Mensagem enviada! Nossa equipe entrará em contato em breve.");
+            form.reset();
         });
     }
 });
