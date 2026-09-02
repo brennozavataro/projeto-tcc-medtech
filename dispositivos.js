@@ -36,6 +36,33 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
+    var menuToggle = document.getElementById("menuToggle");
+    var navLinks = document.getElementById("navLinks");
+
+    if (menuToggle && navLinks) {
+        menuToggle.addEventListener("click", function () {
+            var isOpen = navLinks.classList.toggle("open");
+            menuToggle.classList.toggle("open", isOpen);
+            menuToggle.setAttribute("aria-expanded", isOpen ? "true" : "false");
+        });
+
+        navLinks.querySelectorAll("a").forEach(function (link) {
+            link.addEventListener("click", function () {
+                navLinks.classList.remove("open");
+                menuToggle.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+            });
+        });
+
+        document.addEventListener("click", function (e) {
+            if (!navLinks.contains(e.target) && !menuToggle.contains(e.target)) {
+                navLinks.classList.remove("open");
+                menuToggle.classList.remove("open");
+                menuToggle.setAttribute("aria-expanded", "false");
+            }
+        });
+    }
+
     var navbar = document.getElementById("navbar");
     if (navbar) {
         var lastScrollTop = 0;

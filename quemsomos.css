@@ -139,6 +139,32 @@ a { color: inherit; }
 
 .header-right { display: flex; align-items: center; gap: 1.25rem; }
 
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
+    width: 36px;
+    height: 36px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    flex-shrink: 0;
+    padding: 0;
+}
+.menu-toggle-bar {
+    width: 20px;
+    height: 2px;
+    background-color: var(--icon-color);
+    border-radius: 2px;
+    transition: transform 0.25s ease, opacity 0.2s ease, background-color 0.2s ease;
+}
+.menu-toggle:hover .menu-toggle-bar { background-color: var(--icon-color-hover); }
+.menu-toggle.open .menu-toggle-bar:nth-child(1) { transform: translateY(6px) rotate(45deg); }
+.menu-toggle.open .menu-toggle-bar:nth-child(2) { opacity: 0; }
+.menu-toggle.open .menu-toggle-bar:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
+
 .icon-btn {
     width: 36px;
     height: 36px;
@@ -265,8 +291,35 @@ button {
 .footer-links a:hover { color: var(--accent-text); }
 
 @media (max-width: 860px) {
-    .header-left { gap: 1.5rem; }
-    .nav-links { display: none; }
+    .header-container { padding: 1rem 1.25rem; }
+    .header-left { gap: 1rem; }
+    .header-right { gap: 0.65rem; }
+    .menu-toggle { display: flex; }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 0;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        max-height: 0;
+        overflow: hidden;
+        background-color: var(--bg-header);
+        border-bottom: 1px solid transparent;
+        transition: max-height 0.3s ease, border-color 0.25s ease;
+    }
+    .nav-links.open { max-height: 320px; border-bottom-color: var(--border-color); }
+    .nav-links a { padding: 1rem 1.5rem; border-bottom: 1px solid var(--border-color); }
+    .nav-links a.active::after { display: none; }
+
+    .main-container { padding: 6rem 1.25rem 2.5rem 1.25rem; }
+}
+
+@media (max-width: 480px) {
+    .logo { font-size: 1.25rem; }
+    .icon-bell, .icon-gear { display: none; }
+    .header-right { gap: 0.5rem; }
 }
 
 /* ==========================================================================
@@ -372,4 +425,11 @@ button {
 @media (max-width: 560px) {
     .team-grid { grid-template-columns: 1fr; }
     .contact-form-card { padding: 1.75rem; }
+}
+@media (max-width: 480px) {
+    .about-hero-text h1 { font-size: 2rem; }
+    .about-hero-image img { height: 220px; }
+    .team-section h2 { font-size: 1.5rem; }
+    .team-section { margin-bottom: 3.5rem; }
+    .contact-form-card { padding: 1.25rem; }
 }

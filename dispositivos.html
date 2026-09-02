@@ -20,7 +20,7 @@
         <div class="header-container">
             <div class="header-left">
                 <a href="home.html" class="logo">Med<span>Tech</span></a>
-                <nav class="nav-links">
+                <nav class="nav-links" id="navLinks">
                     <a href="home.html">Painel</a>
                     <a href="quemsomos.html">Cuidado ao Paciente</a>
                     <a href="dispositivos.html" class="active">Dispositivos</a>
@@ -36,6 +36,11 @@
                 <button class="icon-btn icon-bell" aria-label="Notificações"></button>
                 <button class="icon-btn icon-gear" aria-label="Configurações"></button>
                 <div class="user-avatar" role="img" aria-label="Foto de perfil"></div>
+                <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+                    <span class="menu-toggle-bar"></span>
+                    <span class="menu-toggle-bar"></span>
+                    <span class="menu-toggle-bar"></span>
+                </button>
             </div>
         </div>
     </header>
@@ -66,7 +71,7 @@
             <!-- Conteúdo central -->
             <section class="specs-main">
                 <div class="page-heading">
-                    <h1 style="font-size:2rem;">Especificações do Protótipo</h1>
+                    <h1 class="page-title">Especificações do Protótipo</h1>
                     <p class="specs-subtitle">Detalhamento técnico e análise orçamentária dos componentes de alta precisão para o sistema MedTech.</p>
                 </div>
 
